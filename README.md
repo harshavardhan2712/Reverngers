@@ -1,2 +1,2 @@
 # Reverngers
-Man with a mission
+Model project to enable self study and be interview ready
