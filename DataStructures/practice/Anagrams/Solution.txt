@@ -1,0 +1,43 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+        String arr[] = { "cat", "dog", "tac", "god", "act" };  
+        printAnagrams(arr); 
+	}
+	
+	    private static void printAnagrams(String arr[])  {
+	    	Map<String , List<String>> myMap = new HashMap<String , List<String>>();
+	    	for(int i=0;i<arr.length;i++){
+	    		String word = arr[i];
+	    		char[] letters = word.toCharArray();
+	    		Arrays.sort(letters);
+                String newWord = new String(letters);  
+            if (myMap.containsKey(newWord)) {  
+  
+                myMap.get(newWord).add(word);  
+            }  
+            else { 
+                List<String> words = new ArrayList<>();  
+                words.add(word);  
+                myMap.put(newWord, words);  
+            } 	    		
+	    		
+	    	}
+	    	for (String s : myMap.keySet()) {  
+            List<String> values = myMap.get(s);  
+            if (values.size() > 1) {  
+                System.out.print(values);  
+            }  
+        }
+	    }
+
+}
